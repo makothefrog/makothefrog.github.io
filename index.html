@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>~</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<script src="scripts/transitions.js"></script>
+	</head>
+
+	<body>
+		<svg id="fader"></svg>
+        <script>fadeInPage();</script>
+
+		<!-- Welcome screen -->
+		<div id="main_window">
+			<img id=leftImg src="assets/img/image.png" class="image">
+			<div id="content">
+				<h1 class="title">Welcome</h1>
+				<div id="date">
+					<script type="text/javascript">
+						function doDate() {
+							var str = "";
+							var months = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+							var clock = new Date();
+							var now = new Date();
+
+
+							str += months[clock.getMonth()] + " " + now.getDate() + ", " + clock.getFullYear() + " | " + ((("0" + now.getHours()).slice(-2) % 12) || 12)  +":" + ("0" + now.getMinutes()).slice(-2) + ":" + ("0" + now.getSeconds()).slice(-2);
+							document.getElementById("date").innerHTML = str;
+						}
+						setInterval(doDate, 1000);
+						doDate();
+					</script>
+				</div>
+
+		<!-- Web search -->
+				<div id="web_search">
+					<form action="https://duckduckgo.com/" method="GET" autocomplete="off">
+						<label for="q">></label>
+						<input autofocus
+			        	 		id="q"
+			         			name="q"
+			         			type="search"
+			         			placeholder="search with duckduckgo...">
+					</form>
+				</div>
+
+		<!-- Links -->
+				<nav>
+					<div id=links_container>
+						<ul>
+							<a class="subtitle">Home</a>
+								<li><a href="https://drive.google.com/drive/my-drive">drive</a></li>
+								<li><a href="https://www.patreon.com/home">patreon</a></li>
+								<li><a href="https://chromeunboxed.com/">news</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Reddit</a>
+								<li><a href="https://www.reddit.com/r/unixporn/">r/unixporn</a></li>
+								<li><a href="https://www.reddit.com/r/chromeos/">r/chromeos</a></li>
+								<li><a href="https://www.reddit.com/r/outrun/">r/outrun/</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Media</a>
+								<li><a href="https://www.instagram.com/">instagram</a></li>
+								<li><a href="https://twitter.com/home">twitter</a></li>
+								<li><a href="https://www.youtube.com/">youtube</a></li>
+						</ul>
+						<ul>
+							<a class="subtitle">Code</a>
+								<li><a href="https://github.com/">github</a></li>
+								<li><a href="http://192.168.0.12/admin/index.php">pi-hole</a></li>
+								<li><a href="https://people.ucsc.edu/~morozco7/">profile</a></li>
+						</ul>
+						<!-- <ul>
+							<a class="subtitle">Others</a>
+								<li><a href="https://www.digitec.ch/">Digitec</a></li>
+								<li><a href="http://192.168.1.130:8080">Komga</a></li>
+								<li><a href="https://rarbgenter.org/index80.php">RARBG</a></li>
+						</ul> -->
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div class="bottom">
+			<p class="credits">
+				<a href="https://www.deviantart.com/kuvshinov-ilya">art by kuvshinov-ilya on deviantArt</a>
+			</p>
+
+			<div class="contacts">
+				<p>
+					<a href="https://gitlab.com/wolfiy/wlfys-minimal-startpage">GitLab Repo</a> | 
+					<span id="light-mode-toggle" class="light-mode-toggle">Switch themes</span>
+				</p>
+			</div>
+		</div>
+
+		<script src="scripts/darkmode.js"></script>
+	</body>
+</html>
